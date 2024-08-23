@@ -22,31 +22,24 @@ Build your training and test set from the dataset, here we are making the neural
 ## DESIGN STEPS
 
 ### STEP 1:
-
 Loading the dataset
 
 ### STEP 2:
-
 Split the dataset into training and testing
 
 ### STEP 3:
-
 Create MinMaxScalar objects ,fit the model and transform the data.
 
 ### STEP 4:
-
 Build the Neural Network Model and compile the model.
 
 ### STEP 5:
-
 Train the model with the training data.
 
 ### STEP 6:
-
 Plot the performance plot
 
 ### STEP 7:
-
 Evaluate the model with the testing data.
 
 
