@@ -43,32 +43,75 @@ Plot the performance plot
 Evaluate the model with the testing data.
 
 ## PROGRAM
-### Name:
-### Register Number:
+### Name: Thirugnanamoorthi G
+### Register Number: 212221230117
 ```python
 
-Include your code here
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import MinMaxScaler
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+from google.colab import auth
+import gspread
+from google.auth import default
+
+auth.authenticate_user()
+creds,_=default()
+gc=gspread.authorize(creds)
+worksheet=gc.open('newdata').sheet1
+data=worksheet.get_all_values()
+dataset1=pd.DataFrame(data[1:],columns=data[0])
+dataset1=dataset1.astype(int)
+
+x = df[['Input ']].values
+y = df[['Output']].values
+
+x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.33,random_state=33)
+Scaler=MinMaxScaler()
+Scaler.fit(x_train)
+x_train=Scaler.transform(x_train)
+ai_brain=Sequential([
+    Dense(8,activation='relu'),
+    Dense(10,activation='relu'),
+    Dense(1)
+])
+ai_brain.compile(optimizer='rmsprop',loss='mse')
+ai_brain.fit(x_train,y_train,epochs=100)
+
+loss_df=pd.DataFrame(ai_brain.history.history)
+loss_df.plot()
+X_test1 = Scaler.transform(x_test)  
+ai_brain.evaluate(X_test1, y_test)
+X_n1 = [[3], [5]]
+
+X_n1_1 = Scaler.transform(X_n1)
+ai_brain.predict(X_n1_1)
 
 
 ```
 ## Dataset Information
 
-Include screenshot of the dataset
+
+![1](https://github.com/user-attachments/assets/75e308b2-f3f6-4e74-967a-142d2f5776ba)
 
 ## OUTPUT
 
 ### Training Loss Vs Iteration Plot
 
-Include your plot here
+![3](https://github.com/user-attachments/assets/689a9b4d-50e4-4e0c-9e39-7f64713759cf)
+
 
 ### Test Data Root Mean Squared Error
 
-Find the test data root mean squared error
+![4](https://github.com/user-attachments/assets/f6a7c032-c2db-4a1f-9979-acf67afc3757)
+
 
 ### New Sample Data Prediction
 
-Include your sample input and output here
+![5](https://github.com/user-attachments/assets/a3a1c117-de8f-47be-a310-4c033455e1ae)
+
 
 ## RESULT
 
-Include your result here
+Thus to develop a neural network regression model for the dataset created is successfully executed.
