@@ -45,12 +45,13 @@ Evaluate the model with the testing data.
 
 
 ## PROGRAM
+~~~
+Name: Thirugnanamoorthi G
+ Register Number: 212221230117
+~~~
 
-### Name: Thirugnanamoorthi G
-### Register Number: 212221230117
 
-
-```python
+```
 
 import pandas as pd
 from sklearn.model_selection import train_test_split
