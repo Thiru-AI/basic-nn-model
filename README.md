@@ -42,13 +42,10 @@ Plot the performance plot
 ### STEP 7:
 Evaluate the model with the testing data.
 
-
-
 ## PROGRAM
 
 ### Name: Thirugnanamoorthi G
 ### Register Number: 212221230117
-
 ```
 
 import pandas as pd
