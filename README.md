@@ -47,7 +47,7 @@ Evaluate the model with the testing data.
 ## PROGRAM
 ~~~
 Name: Thirugnanamoorthi G
- Register Number: 212221230117
+Register Number: 212221230117
 ~~~
 
 
